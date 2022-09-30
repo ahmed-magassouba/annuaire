@@ -1,0 +1,14 @@
+<kendo-grid [kendoGridBinding]="colaboratorList" [filterable]="true" [height]="350">
+    <kendo-grid-column field="id" title="ID" [width]="40" [filterable]="false"> </kendo-grid-column>
+    <kendo-grid-column field="name" title="NOM PRENOM" [filterable]="true"> </kendo-grid-column>
+    <kendo-grid-column field="username" title="MATRICULE" [filterable]="true"> </kendo-grid-column>
+    <kendo-grid-column field="email" title="EMAIL" [filterable]="true"> </kendo-grid-column>
+    <kendo-grid-column field="phone" title="TELEPHONE" [filterable]="true"> </kendo-grid-column>
+    <kendo-grid-column field="section" title="SECTION" [filterable]="true"> </kendo-grid-column>
+    <kendo-grid-column
+        field="FirstOrderedOn"
+        title="Date"
+        format="MM/dd/yyyy"
+        filter="date">
+    </kendo-grid-column>
+</kendo-grid>

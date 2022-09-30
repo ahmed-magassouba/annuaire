@@ -1,0 +1,131 @@
+<form *ngIf="collaborator" (ngSubmit)="onSubmit()" #collaboratorForm="ngForm">
+  <div class="row">
+    <div class="col s8 offset-s2">
+      <div class="card-panel">
+        <!-- collaborator name -->
+        <div class="form-group">
+          <label for="name">Nom Prénom</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            required
+            pattern="^[a-zA-Z0-9àéèç]{1,25}$"
+            [(ngModel)]="collaborator.name"
+            name="name"
+            #name="ngModel"
+          />
+
+          <div
+            [hidden]="name.valid || name.pristine"
+            class="card-panel red accent-1"
+          >
+            Le nom est requis.
+          </div>
+        </div>
+
+        <!-- collaborator Matricule -->
+        <div class="form-group">
+          <label for="username">Matricule</label>
+          <input
+            type="text"
+            class="form-control"
+            id="username"
+            required
+            pattern="^[a-zA-Z0-9àéèç]{1,25}$"
+            [(ngModel)]="collaborator.username"
+            name="username"
+            #username="ngModel"
+          />
+
+          <div
+            [hidden]="username.valid || username.pristine"
+            class="card-panel red accent-1"
+          >
+            Le nom est requis.
+          </div>
+        </div>
+
+   
+
+        <!-- collaborator email -->
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            required
+            pattern="^[a-zA-Z0-9àéèç]{1,25}$"
+            [(ngModel)]="collaborator.email"
+            name="email"
+            #email="ngModel"
+          />
+          <div
+            [hidden]="email.valid || email.pristine"
+            class="card-panel red accent-1"
+          >
+            Email invalide.
+          </div>
+        </div>
+
+        <!-- collaborator phone -->
+        <div class="form-group">
+          <label for="phone">Téléphone</label>
+          <input
+            type="tel"
+            class="form-control"
+            id="phone"
+            required
+            pattern=""
+            [(ngModel)]="collaborator.phone"
+            name="phone"
+            #phone="ngModel"
+          />
+          <div
+            [hidden]="phone.valid || phone.pristine"
+            class="card-panel red accent-1"
+          >
+            téléphone
+          </div>
+        </div>
+
+        <!-- collaborator section -->
+        <div class="form-group">
+          <label for="section">Section</label>
+          <input
+            type="text"
+            class="form-control"
+            id="section"
+            required
+            pattern="^[a-zA-Z0-9àéèç]{1,25}$"
+            [(ngModel)]="collaborator.section"
+            name="section"
+            #section="ngModel"
+          />
+          <div
+            [hidden]="section.valid || section.pristine"
+            class="card-panel red accent-1"
+          >
+            section
+          </div>
+        </div>
+
+        <!-- Submit button -->
+        <div class="divider"></div>
+        <div class="section center">
+          <button
+            type="submit"
+            class="waves-effect waves-light btn"
+            [disabled]="!collaboratorForm.form.valid"
+          >
+            Valider
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+<h3 *ngIf="!collaborator" class="center">
+  <app-loader></app-loader>
+</h3>

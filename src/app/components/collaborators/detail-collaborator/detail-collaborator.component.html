@@ -1,0 +1,51 @@
+<section *ngIf="collaborator">
+  <p>
+    Fiche informatif de <b>{{ collaborator.name }}</b>
+  </p>
+  <div class="card">
+    <div class="image">
+      <img
+        src="../../../../assets/images/profil.png"
+        alt="collaborator image"
+      />
+    </div>
+    <div class="information">
+      <table>
+        <tbody>
+          <tr>
+            <td>Nom Prénom:</td>
+            <td>
+              <strong>{{collaborator.name}}</strong>
+            </td>
+          </tr>
+          <tr>
+            <td>Matricule:</td>
+            <td>
+              <strong>{{collaborator.username}}</strong>
+            </td>
+          </tr>
+          <tr>
+            <td>Email:</td>
+            <td>
+              <strong>{{collaborator.email}}</strong>
+            </td>
+          </tr>
+          <tr>
+            <td>Numéro de téléphone:</td>
+            <td>
+              <strong>{{collaborator.phone}}</strong>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card-action">
+      <a (click)="goBack()">Retour</a>
+      <a (click)="goToEditCollaborator(collaborator)">Editer</a>
+      <a (click)="deleteCollaborator(collaborator)">Supprimer</a>
+    </div>
+  </div>
+</section>
+<h4 *ngIf="!collaborator">
+  <app-loader></app-loader>
+</h4>

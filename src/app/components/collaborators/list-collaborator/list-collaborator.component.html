@@ -1,0 +1,32 @@
+<app-search-collaborator></app-search-collaborator>
+
+<h1 class="center">Liste des collaborateurs</h1>
+
+
+<ul>
+  <li
+    *ngFor="let collaborator of collaboratorList"
+    collaboratorBorderCard
+    (click)="goPokemonDetail(collaborator)"
+  >
+    <div class="image">
+      <span>
+        <img
+          src="../../../../assets/images/profil.png"
+          alt="collaborator image"
+        />
+      </span>
+    </div>
+    <div class="name">{{ collaborator.name }}</div>
+
+    <div class="info">info</div>
+
+      <span
+        class="{{ collaborator.section | collaboratorSection}}"
+        >{{ collaborator.section }}
+      </span>
+ 
+  </li>
+<a class="add" routerLink="/collaborator/add">+</a>
+  
+</ul>

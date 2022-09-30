@@ -1,0 +1,17 @@
+<div class="search">
+  <input
+    type="text"
+    #searchBox
+    (keyup)="search(searchBox.value)"
+    placeholder="Rechercher un collaborateur"
+  />
+  <div class="collection">
+    <a
+      *ngFor="let collaborator of collaborators$ | async"
+      class="collection-item"
+      (click)="goToCollaboratorDetails(collaborator)"
+    >
+      {{ collaborator.name }}
+    </a>
+  </div>
+</div>
