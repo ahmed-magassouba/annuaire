@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 })
 export class ListCollaboratorComponent implements OnInit {
   collaboratorList: Collaborator[];
+  p:number = 1;
+  term: string;
 
   constructor(
     private router: Router,

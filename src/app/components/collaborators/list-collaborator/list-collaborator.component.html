@@ -4,8 +4,9 @@
 
 
 <ul>
+  <input type="text" [(ngModel)]="term">
   <li
-    *ngFor="let collaborator of collaboratorList"
+    *ngFor="let collaborator of collaboratorList | filter: term | paginate: { itemsPerPage: 4, currentPage: p } "
     collaboratorBorderCard
     (click)="goPokemonDetail(collaborator)"
   >
@@ -28,5 +29,7 @@
  
   </li>
 <a class="add" routerLink="/collaborator/add">+</a>
+
   
 </ul>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>

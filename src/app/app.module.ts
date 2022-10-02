@@ -17,6 +17,7 @@ import { GridModule } from '@progress/kendo-angular-grid';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +34,7 @@ import { GridModule } from '@progress/kendo-angular-grid';
     BrowserAnimationsModule,
     ButtonsModule,
     GridModule,
+  
 
   ],
   providers: [],

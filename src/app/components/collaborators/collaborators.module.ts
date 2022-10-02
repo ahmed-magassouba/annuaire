@@ -16,6 +16,7 @@ import { AddCollaboratorComponent } from './add-collaborator/add-collaborator.co
 import { AuthGuard } from 'src/app/auth.guard';
 import { SearchMoreComponent } from './search-more/search-more.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 const collaboratorRoutes: Routes = [
   { path: 'edit/collaborator/:id', component:EditCollaboratorComponent, canActivate: [AuthGuard] },
@@ -43,6 +44,8 @@ const collaboratorRoutes: Routes = [
     CommonModule,
     FormsModule,
     GridModule,
+    Ng2SearchPipeModule,
+    NgxPaginationModule,
     Ng2SearchPipeModule,
     RouterModule.forChild(collaboratorRoutes),
   ],
