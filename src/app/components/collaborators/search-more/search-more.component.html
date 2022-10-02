@@ -1,4 +1,14 @@
-<kendo-grid [kendoGridBinding]="colaboratorList" [filterable]="true" [height]="350">
+<kendo-grid 
+[kendoGridBinding]="colaboratorList" 
+[filterable]="true" 
+[height]="350"
+[sortable]="true"
+[groupable]="true"
+[pageable]="{pageSizes:[2,4,6,8,10], buttonCount: 5}"
+[pageSize]="2"
+[selectable]="true"
+[sortable]="{ mode: 'multiple', allowUnsort: true }"
+>
     <kendo-grid-column field="id" title="ID" [width]="40" [filterable]="false"> </kendo-grid-column>
     <kendo-grid-column field="name" title="NOM PRENOM" [filterable]="true"> </kendo-grid-column>
     <kendo-grid-column field="username" title="MATRICULE" [filterable]="true"> </kendo-grid-column>

@@ -19,4 +19,5 @@ colaboratorList : Collaborator[]= [];
       console.log(this.colaboratorList);
   }
 
+ 
 }
